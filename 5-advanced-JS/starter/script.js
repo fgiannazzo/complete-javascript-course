@@ -1,4 +1,65 @@
-// Passing functions as arguments
+/* Closures
+
+function retirement(retirementAge) {
+    var a = ' years left until retirement.';
+    return function(yearOfBirth) {
+        var age = 2020 - yearOfBirth;
+        console.log((retirementAge - age) + a);
+    }
+}
+
+var retirementUS = retirement(66)(1990);
+
+function interviewQuestion(job) {
+    return function(name) {
+        if (job === 'designer') {
+            console.log(name + ', can you please explain what UX design is?');
+        } else if (job === 'teacher') {
+            console.log('What subject do you teach, ' + name + '?');
+        } else {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+}
+
+interviewQuestion('teacher')('John');
+
+*/
+/* Immediatly Invoked Function Expressions
+
+function game() {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+}
+game();
+
+
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+})();
+*/
+/* Functions returning functions
+
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function(name) {
+            console.log(name + ', can you please explain what UX design is?');
+        } 
+    } else if (job === 'teacher') {
+        return function(name) {
+            console.log('What subject do you teach, ' + name + '?');
+        }
+    } else {
+        return function(name) {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+}
+
+interviewQuestion('teacher')('Mark');
+*/
+/* Passing functions as arguments
 
 var years = [1990, 1965, 1937, 2005, 1998];
 
@@ -24,7 +85,7 @@ var fullAges = arrayCalc(ages, isFullAge);
 console.log(years);
 console.log(ages);
 console.log(fullAges);
-
+*/
 /* Primitives vs Objects
 
 // Primitives
